@@ -1,0 +1,1 @@
+document.write("Kalimat ini menggunakan  javascrip yang di ambil dari file eksternal")

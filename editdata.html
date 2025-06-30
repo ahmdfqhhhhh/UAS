@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Data Barang</title>
+  <link rel="icon" type="image/png" href="logostruk.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    form {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 360px;
+      animation: slideDown 1s ease-out forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      color: #1565c0;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .buttons input[type="submit"],
+    .buttons input[type="reset"],
+    .buttons a {
+      flex: 1;
+      text-align: center;
+      padding: 10px 0;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .buttons input[type="submit"],
+    .buttons input[type="reset"] {
+      background-color: #1565c0;
+      color: white;
+    }
+
+    .buttons input[type="submit"]:hover,
+    .buttons input[type="reset"]:hover {
+      background-color: #0d47a1;
+    }
+
+    .buttons a.btn-cancel {
+      background-color: #0d47a1;
+      color: white;
+    }
+
+    .buttons a.btn-cancel:hover {
+      background-color: #424242;
+    }
+  </style>
+
+  <script>
+    function toggleInput() {
+      const select = document.getElementById("pilihan");
+      const idInput = document.getElementById("idInput");
+      const namaInput = document.getElementById("namaInput");
+
+      if (select.value === "id") {
+        idInput.style.display = "block";
+        namaInput.style.display = "none";
+      } else {
+        idInput.style.display = "none";
+        namaInput.style.display = "block";
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', toggleInput);
+  </script>
+</head>
+<body>
+  <form action="proseseditdata.php" method="post">
+    <h1>Edit Data Barang</h1>
+
+    <label for="pilihan">Pilih Berdasarkan:</label>
+    <select name="pilihan" id="pilihan" onchange="toggleInput()">
+      <option value="id">ID Barang</option>
+      <option value="nama_barang">Nama Barang</option>
+    </select>
+
+    <div id="idInput">
+      <label for="id_barang">Masukkan ID Barang:</label>
+      <input type="text" id="id_barang" name="id_barang">
+    </div>
+
+    <div id="namaInput" style="display: none;">
+      <label for="nama_barang">Masukkan Nama Barang:</label>
+      <input type="text" id="nama_barang" name="nama_barang">
+    </div>
+
+    <div class="buttons">
+      <input type="submit" value="Edit">
+      <input type="reset" value="Reset">
+      <a href="menu.html" class="btn-cancel">Batal</a>
+    </div>
+  </form>
+</body>
+</html>

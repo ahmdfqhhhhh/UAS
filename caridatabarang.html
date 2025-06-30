@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pencarian Data Barang</title>
+  <link rel="icon" type="image/png" href="logostruk.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f0fdfa, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes logoZoom {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: #00695c;
+      margin-bottom: 20px;
+      animation: fadeDown 1s ease-in forwards;
+      text-align: center;
+    }
+
+    form {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 320px;
+      animation: fadeDown 1s ease-in forwards;
+      text-align: center;
+    }
+
+    .logo {
+      width: 100px;
+      margin: 0 auto 20px auto;
+      animation: logoZoom 1s ease-in-out forwards;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    input[type="submit"],
+    input[type="reset"],
+    .btn-cancel {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 14px;
+      text-decoration: none;
+      flex: 1;
+      text-align: center;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    .btn-cancel:hover {
+      background-color: #004d40;
+    }
+  </style>
+  <script>
+    function updateInputLabel() {
+      const select = document.getElementById("search_type");
+      const inputLabel = document.getElementById("input_label");
+      const input = document.getElementById("search_input");
+
+      if (select.value === "kode") {
+        inputLabel.textContent = "Masukkan Kode Barang";
+        input.name = "id_barang";
+        input.placeholder = "Contoh: BRG001";
+      } else {
+        inputLabel.textContent = "Masukkan Nama Barang";
+        input.name = "nama_barang";
+        input.placeholder = "Contoh: Pulpen";
+      }
+    }
+  </script>
+</head>
+<body>
+  <form action="caridatabarang.php" method="post">
+    <h1>Pencarian Data Barang</h1>
+
+    <label for="search_type">Cari berdasarkan:</label>
+    <select id="search_type" name="search_type" onchange="updateInputLabel()">
+      <option value="kode">Kode Barang</option>
+      <option value="nama">Nama Barang</option>
+    </select>
+
+    <label for="search_input" id="input_label">Masukkan Kode Barang</label>
+    <input
+      type="text"
+      id="search_input"
+      name="id_barang"
+      placeholder="Contoh: BRG001"
+      required
+    />
+
+    <div class="buttons">
+      
+      <input type="submit" value="Cari" />
+      <input type="reset" value="Reset" />
+      <a href="menu.html" class="btn-cancel">Batal</a>
+    </div>
+  </form>
+</body>
+</html>

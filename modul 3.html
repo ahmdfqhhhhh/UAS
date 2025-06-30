@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>modul 3</title>
+        <link rel="icon" type="image/png" href="logostruk.png">
+        <h2>Kalkulator Berat Badan Ideal (Rumus Broca)</h2>
+        
+    <style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h1, h2, h3 {
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards 0.5s;
+      transition: color 0.3s;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #00ffff;
+    }
+    p {
+      transition: transform 0.3s;
+    }
+    p:hover {
+      transform: scale(1.03);
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    </style></head>
+    <form id="formBBI">
+        <label for="namaBBI">Nama Anda:</label>
+        <input type="text" id="namaBBI" required><br><br>
+
+        <label for="jenisKelamin">Jenis Kelamin:</label>
+        <select id="jenisKelamin">
+            <option value="pria">Pria</option>
+            <option value="wanita">Wanita</option>
+        </select><br><br>
+
+        <label for="tinggiBBI">Tinggi Badan (cm):</label>
+        <input type="number" id="tinggiBBI" required><br><br>
+
+        <button type="button" onclick="hitungBBI()">Hitung</button>
+    </form>
+
+    <h3>Hasil BBI:</h3>
+    <p id="hasilBBI"></p>
+
+    <script>
+        function hitungBBI() {
+            let nama = document.getElementById("namaBBI").value;
+            let jenisKelamin = document.getElementById("jenisKelamin").value;
+            let tinggi = parseInt(document.getElementById("tinggiBBI").value);
+            let beratIdeal;
+
+            if (isNaN(tinggi) || tinggi <= 0) {
+                document.getElementById("hasilBBI").innerHTML = "Masukkan tinggi badan yang valid.";
+                return;
+            }
+
+            if (jenisKelamin === "pria") {
+                beratIdeal = (tinggi - 100) * 0.9;
+            } else {
+                beratIdeal = (tinggi - 100) * 0.85;
+            }
+
+            document.getElementById("hasilBBI").innerHTML = 
+                `Nama Anda: ${nama} <br>
+                 Jenis Kelamin: ${jenisKelamin.toUpperCase()} <br>
+                 Tinggi Badan: ${tinggi} cm <br>
+                 Berat Badan Ideal Anda: ${beratIdeal.toFixed(1)} kg`;
+        }
+    </script>
+
+    <hr>
+
+    <h2>Kalkulator Body Mass Index (BMI)</h2>
+    <form onsubmit="event.preventDefault(); hitungBMI();">
+        <label for="namaBMI">Nama:</label>
+        <input type="text" id="namaBMI" required>
+        <br><br>
+
+        <label for="tinggiBMI">Tinggi Badan (cm):</label>
+        <input type="number" id="tinggiBMI" required>
+        <br><br>
+
+        <label for="beratBMI">Berat Badan (kg):</label>
+        <input type="number" id="beratBMI" required>
+        <br><br>
+
+        <button type="submit">Hitung BMI</button>
+    </form>
+
+    <h3>Hasil BMI:</h3>
+    <p id="hasilBMI"></p>
+
+    <script>
+        function hitungBMI() {
+            let nama = document.getElementById("namaBMI").value;
+            let tinggi = parseFloat(document.getElementById("tinggiBMI").value) / 100;
+            let berat = parseFloat(document.getElementById("beratBMI").value);
+
+            if (isNaN(tinggi) || isNaN(berat) || nama.trim() === "") {
+                alert("Harap isi semua data dengan benar!");
+                return;
+            }
+
+            let bmi = berat / (tinggi * tinggi);
+            let status = "";
+
+            if (bmi < 18.5) {
+                status = "Kekurangan berat badan";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                status = "Normal (ideal)";
+            } else if (bmi >= 25.0 && bmi <= 29.9) {
+                status = "Kelebihan berat badan";
+            } else {
+                status = "Kegemukan (Obesitas)";
+            }
+
+            document.getElementById("hasilBMI").innerHTML = `
+                Nama: ${nama} <br>
+                Tinggi Badan: ${tinggi * 100} cm <br>
+                Berat Badan: ${berat} kg <br>
+                BMI: ${bmi.toFixed(2)} <br>
+                Keterangan: ${status}
+            `;
+        }
+    </script>
+</html>

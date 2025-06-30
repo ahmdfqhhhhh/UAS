@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Gaji Pegawai</title>
+    <link rel="icon" type="image/png" href="logostruk.png">
+    <style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h1, h2, h3 {
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards 0.5s;
+      transition: color 0.3s;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #00ffff;
+    }
+    p {
+      transition: transform 0.3s;
+    }
+    p:hover {
+      transform: scale(1.03);
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+        body { font-family: Arial, sans-serif; }
+        .container { width: 500px; margin: auto; }
+        input[type="text"], input[type="number"] { width: 100%; padding: 5px; margin: 5px 0; }
+        button { margin: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        table, th, td { border: 1px solid #000; }
+        th, td { padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <h2>Program Gaji Pegawai</h2>
+    
+        <label for="nama">Nama Pegawai:</label>
+        <input type="text" id="namaPegawai"> <br>
+        <label>Jam Kerja Perhari:</label>
+        <input type="number" id="jamKerja">
+        <label>Upah Perjam:</label>
+        <input type="number" id="upahPerjam">
+        <label>Jumlah Anak:</label>
+        <input type="number" id="jumlahAnak">
+        <button onclick="hitungGaji()">Proses</button>
+        <button onclick="resetForm()">Reset</button>
+    </div>
+
+    <table id="outputTable" style="display:none;">
+        <tr>
+            <th>Nama Pegawai</th> <br>
+            <td id="outputNama"></td>
+        </tr>
+        <tr>
+            <th>Gaji Per Bulan</th>
+            <td id="outputGajiPerBulan"></td>
+        </tr>
+        <tr>
+            <th>Tunjangan Anak</th>
+            <td id="outputTunjanganAnak"></td>
+        </tr>
+        <tr>
+            <th>Gaji Total Perbulan</th>
+            <td id="outputTotalGaji"></td>
+        </tr>
+        <tr>
+            <th>PPH 10%</th>
+            <td id="outputPPH"></td>
+        </tr>
+        <tr>
+            <th>Gaji Bersih Diterima</th>
+            <td id="outputGajiBersih"></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+function hitungGaji() {
+    const nama = document.getElementById('namaPegawai').value;
+    const jamKerja = parseFloat(document.getElementById('jamKerja').value);
+    const upahPerjam = parseFloat(document.getElementById('upahPerjam').value);
+    const jumlahAnak = parseInt(document.getElementById('jumlahAnak').value);
+
+    if (!nama || isNaN(jamKerja) || isNaN(upahPerjam) || isNaN(jumlahAnak)) {
+        alert("Mohon isi semua data dengan benar.");
+        return;
+    }
+
+    const gajiPerBulan = jamKerja * upahPerjam * 30;
+    const tunjanganAnak = jumlahAnak * 50000;
+    const totalGaji = gajiPerBulan + tunjanganAnak;
+    const pph = totalGaji * 0.10;
+    const gajiBersih = totalGaji - pph;
+
+    // Tampilkan hasil dalam tabel
+    document.getElementById('outputNama').innerText = nama;
+    document.getElementById('outputGajiPerBulan').innerText = gajiPerBulan.toFixed(2);
+    document.getElementById('outputTunjanganAnak').innerText = tunjanganAnak.toFixed(2);
+    document.getElementById('outputTotalGaji').innerText = totalGaji.toFixed(2);
+    document.getElementById('outputPPH').innerText = pph.toFixed(2);
+    document.getElementById('outputGajiBersih').innerText = gajiBersih.toFixed(2);
+
+    document.getElementById('outputTable').style.display = 'table';
+}
+
+function resetForm() {
+    document.getElementById('namaPegawai').value = "";
+    document.getElementById('jamKerja').value = "";
+    document.getElementById('upahPerjam').value = "";
+    document.getElementById('jumlahAnak').value = "";
+    document.getElementById('outputTable').style.display = 'none';
+}
+</script>
+</body>
+</html>

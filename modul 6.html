@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Gaji Pegawai</title>
+    <link rel="icon" type="image/png" href="logostruk.png">
+    <style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h1, h2, h3 {
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards 0.5s;
+      transition: color 0.3s;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #00ffff;
+    }
+    p {
+      transition: transform 0.3s;
+    }
+    p:hover {
+      transform: scale(1.03);
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            margin-bottom: 50px;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 5px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function hitungGajiForm1() {
+            var jabatan = document.getElementById("jabatan1").value;
+            var gajiPokok = 0;
+
+            if (jabatan == "MANAGER") {
+                gajiPokok = 15000000;
+            } else if (jabatan == "HRD") {
+                gajiPokok = 8000000;
+            } else if (jabatan == "MARKETING") {
+                gajiPokok = 5000000;
+            }
+
+            document.getElementById("gajiPokok1").value = gajiPokok;
+        }
+
+        function resetForm1() {
+            document.getElementById("gajiForm1").reset();
+            document.getElementById("gajiPokok1").value = "";
+        }
+
+        function hitungGajiForm2() {
+            var jabatan = document.getElementById("jabatan2").value;
+            var pendidikan = document.getElementById("pendidikan2").value;
+            var gajiPokok = 0;
+            var tunjangan = 0;
+            var totalGaji = 0;
+
+            if (jabatan == "MANAGER") {
+                gajiPokok = 15000000;
+            } else if (jabatan == "HRD") {
+                gajiPokok = 8000000;
+            } else if (jabatan == "MARKETING") {
+                gajiPokok = 5000000;
+            }
+
+            if (pendidikan == "SMA") {
+                tunjangan = gajiPokok * 0.10;
+            } else if (pendidikan == "S1") {
+                tunjangan = gajiPokok * 0.15;
+            } else if (pendidikan == "S2") {
+                tunjangan = gajiPokok * 0.20;
+            } else if (pendidikan == "S3") {
+                tunjangan = gajiPokok * 0.30;
+            }
+
+            totalGaji = gajiPokok + tunjangan;
+
+            document.getElementById("gajiPokok2").value = gajiPokok;
+            document.getElementById("tunjangan2").value = tunjangan;
+            document.getElementById("totalGaji2").value = totalGaji;
+        }
+
+        function resetForm2() {
+            document.getElementById("gajiForm2").reset();
+            document.getElementById("gajiPokok2").value = "";
+            document.getElementById("tunjangan2").value = "";
+            document.getElementById("totalGaji2").value = "";
+        }
+    </script>
+</head>
+<body>
+    <h2><ins>Tugas 6.1</ins></h2>
+    <h2>Menghitung Gaji Pegawai</h2>
+    <form id="gajiForm1">
+        <table>
+            <tr>
+                <td>Nama Pegawai</td>
+                <td><input type="text" id="namaPegawai1" name="namaPegawai1"></td>
+            </tr>
+            <tr>
+                <td>Jabatan</td>
+                <td>
+                    <select id="jabatan1" name="jabatan1">
+                        <option value="MANAGER">MANAGER</option>
+                        <option value="HRD">HRD</option>
+                        <option value="MARKETING">MARKETING</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td><textarea id="alamat1" name="alamat1" rows="3" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td>Gaji Pokok</td>
+                <td><input type="text" id="gajiPokok1" name="gajiPokok1" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" onclick="hitungGajiForm1()">Proses</button>
+                    <button type="button" onclick="resetForm1()">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <h2><ins>Tugas 6.2</ins></h2>
+    <h2>Menghitung Gaji Pegawai, Tunjangan, dan Total Gaji</h2>
+    <form id="gajiForm2">
+        <table>
+            <tr>
+                <td>Nama Pegawai</td>
+                <td><input type="text" id="namaPegawai2" name="namaPegawai2"></td>
+            </tr>
+            <tr>
+                <td>Jabatan</td>
+                <td>
+                    <select id="jabatan2" name="jabatan2">
+                        <option value="MANAGER">MANAGER</option>
+                        <option value="HRD">HRD</option>
+                        <option value="MARKETING">MARKETING</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Pendidikan</td>
+                <td>
+                    <select id="pendidikan2" name="pendidikan2">
+                        <option value="SMA">SMA</option>
+                        <option value="S1">S1</option>
+                        <option value="S2">S2</option>
+                        <option value="S3">S3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td><textarea id="alamat2" name="alamat2" rows="3" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td>Gaji Pokok</td>
+                <td><input type="text" id="gajiPokok2" name="gajiPokok2" readonly></td>
+            </tr>
+            <tr>
+                <td>Tunjangan</td>
+                <td><input type="text" id="tunjangan2" name="tunjangan2" readonly></td>
+            </tr>
+            <tr>
+                <td>Total Gaji</td>
+                <td><input type="text" id="totalGaji2" name="totalGaji2" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" onclick="hitungGajiForm2()">Proses</button>
+                    <button type="button" onclick="resetForm2()">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

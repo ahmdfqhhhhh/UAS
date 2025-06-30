@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kelompok Alpro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="logostruk.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #00ffe7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 260px;
+      height: 360px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      backface-visibility: hidden;
+      box-shadow: 0 0 15px #00ffe7a0;
+    }
+
+    .flip-card-front {
+      background: #101820;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .flip-card-front img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .flip-card-front h3 {
+      margin-top: 10px;
+      font-size: 1.3em;
+      text-align: center;
+    }
+
+    .flip-card-back {
+      background: #1f1f1f;
+      color: #00ffe7;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .flip-card-back table {
+      color: #00ffe7;
+      font-size: 0.95em;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .flip-card-back td {
+      padding-right: 10px;
+      vertical-align: top;
+    }
+
+    .flip-card-back a {
+      align-self: center;
+      background: transparent;
+      border: 2px solid #00ffe7;
+      color: #00ffe7;
+      padding: 10px 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: all 0.3s ease;
+    }
+
+    .flip-card-back a:hover {
+      background-color: #00ffe7;
+      color: #000;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Anggota 1 -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="faqih.jpg" alt="Foto faqih">
+        <h3>Ahmad Faqih</h3>
+      </div>
+      <div class="flip-card-back">
+        <table>
+          <tr><td>Nama</td><td>: Ahmad Faqih</td></tr>
+          <tr><td>NIM</td><td>: 24EP10001</td></tr>
+          <tr><td>Prodi</td><td>: Sistem Informasi</td></tr>
+        </table>
+        <a href="faqih.html" target="_blank">Lihat Portofolio</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anggota 2 -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="nisaflip.jpg" alt="Foto nisa">
+        <h3>Faiqotun Nisa</h3>
+      </div>
+      <div class="flip-card-back">
+        <table>
+          <tr><td>Nama</td><td>: Faiqotun Nisa</td></tr>
+          <tr><td>NIM</td><td>: 24EO10016</td></tr>
+          <tr><td>Prodi</td><td>: Informatika</td></tr>
+        </table>
+        <a href="nisa.html" target="_blank">Lihat Portofolio</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anggota 3 -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="anggelflip.jpg" alt="Foto anggel">
+        <h3>Zulfa Angelita Huwaida</h3>
+      </div>
+      <div class="flip-card-back">
+        <table>
+          <tr><td>Nama</td><td>: Zulfa Angelita Huwaida</td></tr>
+          <tr><td>NIM</td><td>: 24EO10020</td></tr>
+          <tr><td>Prodi</td><td>: Informatika</td></tr>
+        </table>
+        <a href="anggel.html" target="_blank">Lihat Portofolio</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anggota 4 -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="dila.jpg" alt="Foto dila">
+        <h3>Fadlilatul Muna</h3>
+      </div>
+      <div class="flip-card-back">
+        <table>
+          <tr><td>Nama</td><td>:  Fadlilatul Muna</td></tr>
+          <tr><td>NIM</td><td>: 24EN10003</td></tr>
+          <tr><td>Prodi</td><td>: Matematika</td></tr>
+        </table>
+        <a href="dila.html">Lihat Portofolio</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

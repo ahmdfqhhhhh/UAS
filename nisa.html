@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio | Faiqotun Nisa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="logostruk.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #112240;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+      border: 2px solid #61dafb;
+    }
+
+    .logo-container h1 {
+      color: #61dafb;
+      font-size: 26px;
+    }
+
+    nav a {
+      color: #8892b0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #61dafb;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .intro {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .intro img {
+      width: 180px;
+      height: 180px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 3px solid #64ffda;
+    }
+
+    .bio {
+      flex: 1;
+    }
+
+    .bio h2 {
+      color: #64ffda;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .bio p {
+      margin-bottom: 10px;
+      color: #8892b0;
+      font-size: 18px;
+    }
+
+    .about {
+      margin-top: 30px;
+    }
+
+    .about h2 {
+      color: #64ffda;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .skills ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skills li {
+      background: #233554;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #64ffda;
+      font-weight: bold;
+    }
+
+    .projects .project {
+      background: #112240;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .projects .project h3 {
+      color: #61dafb;
+      margin-bottom: 10px;
+    }
+
+    .contact a {
+      color: #25D366;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #112240;
+      color: #8892b0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .bio {
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="logoi.jpeg" alt="Foto Profil">
+      <h1>FN</h1>
+    </div>
+    <nav>
+      <a href="#about">Tentang</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#projects">Proyek</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <img src="nisa.jpg" alt="Foto Profil">
+    <div class="bio">
+      <h2>Faiqotun Nisa</h2>
+      <p><strong>NIM:</strong> 24EO10016</p>
+      <p><strong>Prodi:</strong> Informatika</p>
+
+      <div class="about">
+        <h2>Tentang Saya</h2>
+        <p>Saya adalah mahasiswa Informatika yang antusias mengembangkan aplikasi web modern. Saya percaya bahwa teknologi bukan hanya tentang kecanggihan, tapi juga tentang bagaimana ia menyentuh kehidupan. Karena itu, saya terus belajar, bereksperimen, dan membangun solusi digital yang bisa memberi arti.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Keahlian</h2>
+    <ul>
+      <li>HTML & CSS(Proses)</li>
+      <li>JavaScript(Proses)</li>
+      <li>PHP & MySQL(Proses)</li>
+      <li>Laravel(Proses)</li>
+      <li>Microsoft Excel</li>
+      <li>Microsoft Word</li>
+      <li>CapCut(Editing Video & Presentasi)</li>
+      <li>Canva(Editing Video & Presentasi)</li>
+      <li>manajemen Data Hafalan(tahfidz)</li>
+      <li>Sistem Absensi QR code</li>
+      <li>Komunikasi Efektif(proses)</li>
+      <li>Analisis Sistem Dasar</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Proyek Saya</h2>
+
+    <div class="project">
+      <h3>Aplikasi Absensi Santri</h3>
+      <p>Saya membuat sistem pencatatan pencapaian hafalan tahfidz untuk santri akhwat tingkat SMP menggunakan Microsoft Excel. Sistem ini dirancang agar mudah digunakan oleh guru tahfidz, dengan format mingguan dan bulanan yang menampilkan progres setiap santri secara terstruktur dan rapi.</p>
+    </div>
+
+    <div class="project">
+      <h3>Portofolio Pribadi</h3>
+      <p>Situs pribadi untuk menampilkan keahlian, riwayat proyek, dan kontak profesional.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Kontak</h2>
+    <p>Hubungi saya lewat WhatsApp:</p>
+    <p>
+      <a href="https://wa.me/6288216346848" target="_blank">
+        <i class="fab fa-whatsapp"></i> 0882-1634-6848
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Faiqotun Nisa.
+  </footer>
+
+</body>
+</html>

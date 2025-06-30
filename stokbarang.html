@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kurangi Stok Barang</title>
+  <link rel="icon" type="image/png" href="logostruk.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      color: #334155;
+      font-weight: 500;
+      max-width: 300px;
+    }
+
+    select,
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      margin-bottom: 15px;
+      transition: border-color 0.3s;
+    }
+
+    select:focus,
+    input:focus {
+      border-color: #2563eb;
+      outline: none;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="submit"],
+    .btn-cancel {
+      flex: 1;
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+    }
+
+    input[type="submit"] {
+      background-color: #ef4444;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #dc2626;
+    }
+
+    .btn-cancel {
+      background-color: #64748b;
+    }
+
+    .btn-cancel:hover {
+      background-color: #475569;
+    }
+  </style>
+  <script>
+    function toggleInputField() {
+      const select = document.getElementById("search_by");
+      const idInput = document.getElementById("input_id");
+      const nameInput = document.getElementById("input_nama");
+
+      if (select.value === "id_barang") {
+        idInput.style.display = "block";
+        nameInput.style.display = "none";
+        nameInput.querySelector("input").value = "";
+      } else {
+        idInput.style.display = "none";
+        nameInput.style.display = "block";
+        idInput.querySelector("input").value = "";
+      }
+    }
+
+    window.onload = toggleInputField;
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Kurangi Stok Barang</h2>
+    <form action="stokbarang.php" method="post">
+      <label for="search_by">Cari berdasarkan:</label>
+      <select name="search_by" id="search_by" onchange="toggleInputField()">
+        <option value="id_barang">ID Barang</option>
+        <option value="nama_barang">Nama Barang</option>
+      </select>
+
+      <div id="input_id">
+        <label for="id_barang">ID Barang:</label>
+        <input type="text" name="id_barang" placeholder="Contoh: BRG001" />
+      </div>
+
+      <div id="input_nama" style="display: none;">
+        <label for="nama_barang">Nama Barang:</label>
+        <input type="text" name="nama_barang" placeholder="Contoh: Pensil" />
+      </div>
+
+      <label for="jumlah">Jumlah yang Dikurangi:</label>
+      <input type="number" name="jumlah" required min="1" />
+
+      <div class="button-group">
+        <input type="submit" value="Kurangi Stok" />
+        <a href="menu.html" class="btn-cancel">Batal</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

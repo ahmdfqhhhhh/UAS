@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Selamat Datang</title>
+    <link rel="icon" type="image/png" href="logostruk.png">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-image: url("logo.png"); /* Ganti dengan gambar kamu */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      .welcome-container {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        transform: scale(0.9);
+        animation: fadeInZoom 1s ease forwards;
+      }
+
+      @keyframes fadeInZoom {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+        animation: slideUp 1s ease 0.3s forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        animation: slideUp 1s ease 0.6s forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .btn {
+        background-color: #fff;
+        color: #000;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        animation: slideUp 1s ease 0.9s forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .btn:hover {
+        background-color: #ddd;
+      }
+
+      @keyframes slideUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="welcome-container">
+      <h1>Welcome to my website</h1>
+      <p>
+        Browse the webpage showcasing the final projects for the Programming
+        Algorithms course
+      </p>
+      <a href="menu.html" class="btn">Get Startrd</a>
+    </div>
+  </body>
+</html>

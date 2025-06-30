@@ -1,0 +1,98 @@
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Modul 4</title>
+        <link rel="icon" type="image/png" href="logostruk.png">
+    <style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h1, h2, h3 {
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards 0.5s;
+      transition: color 0.3s;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #00ffff;
+    }
+    p {
+      transition: transform 0.3s;
+    }
+    p:hover {
+      transform: scale(1.03);
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    </style></head>
+    <body>
+        <h2>Menampilkan Data Nilai Siswa dengan Array</h2>
+    <table border="1">
+        <thead>
+            <tr>
+      
+                <th>No</th>
+                <th>Nama</th>
+                <th>Tugas</th>
+                <th>UTS</th>
+                <th>UAS</th>
+                <th>Nilai Akhir</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="dataSiswa"></tbody>
+    </table>
+
+    <script>
+     
+        let siswa = [
+            { no: 1, nama: "Asep", tugas: 80, uts: 75, uas: 85 },
+            { no: 2, nama: "Iwan", tugas: 60, uts: 65, uas: 70 },
+            { no: 3, nama: "Cepi", tugas: 90, uts: 85, uas: 95 },
+            { no: 4, nama: "Agus", tugas: 50, uts: 55, uas: 60 },
+            { no: 5, nama: "Dadang", tugas: 40, uts: 45, uas: 50 }
+        ];
+
+        function hitungNilaiAkhir(tugas, uts, uas) {
+            return (0.4 * tugas) + (0.3 * uts) + (0.3 * uas);
+        }
+
+        function tentukanGrade(nilaiAkhir) {
+            if (nilaiAkhir >= 80) return "A";
+            else if (nilaiAkhir >= 70) return "B";
+            else if (nilaiAkhir >= 60) return "C";
+            else if (nilaiAkhir >= 50) return "D";
+            else return "E";
+        }
+
+        let tbody = document.getElementById("dataSiswa");
+
+        siswa.forEach((data, index) => {
+            let nilaiAkhir = hitungNilaiAkhir(data.tugas, data.uts, data.uas);
+            let grade = tentukanGrade(nilaiAkhir);
+
+            let row = `<tr>
+             
+                <td>${index + 1}</td>
+                <td>${data.nama}</td>
+                <td>${data.tugas}</td>
+                <td>${data.uts}</td>
+                <td>${data.uas}</td>
+                <td>${nilaiAkhir.toFixed(2)}</td>
+                <td>${grade}</td>
+            </tr>`;
+            tbody.innerHTML += row;
+        });
+    </script>
+    </body>
+</html>
+    

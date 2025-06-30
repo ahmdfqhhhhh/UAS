@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charse="utf-5">
+        <meta name="viewport" content="width=device-width, i itial-scale=1.0">
+        <title>Modul 1</title>
+        <link rel="icon" type="image/png" href="logostruk.png">
+<style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h1, h2, h3 {
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards 0.5s;
+      transition: color 0.3s;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #00ffff;
+    }
+    p {
+      transition: transform 0.3s;
+    }
+    p:hover {
+      transform: scale(1.03);
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    </style></head>
+<body>
+    <h1 style="text-align: center;">UNIVERSITAS NAHDATUL ULAMA AL GHAZALI </h1>
+    <h2 style="text-align:center; color:aqua;">FAKULTAS MATEMATIKA DAN ILMU KOMPUTER</h2>
+    <hr />
+    <h3 style="text-align:center; color: blue;">Jl. Kemerdekaan Barat Mo.17 Kesugihan Cilacap</h3>
+ <h1><script src="js/file-eksternal.js"></script></h1>
+<form>
+    <input type="button" value="Proses" onClick="alert ('Anda telah mengclick tombol proses')">
+</form>
+</body>
+</html>

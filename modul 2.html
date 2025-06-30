@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Modul 2</title>
+  <link rel="icon" type="image/png" href="logostruk.png">
+<style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h1, h2, h3 {
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards 0.5s;
+      transition: color 0.3s;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #00ffff;
+    }
+    p {
+      transition: transform 0.3s;
+    }
+    p:hover {
+      transform: scale(1.03);
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    </style></head>
+<body>
+  <h2>Bilangan Ganjil dari 1 Sampai 100</h2>
+  <script>
+    for (i = 1; i <= 100; i += 2) {
+      document.write(i + " | ");
+    }
+  </script>
+</body>
+<hr />
+<head>
+  <meta charset="UTF-8">
+  <title>Bilangan Genap dari 1 Sampai 100</title>
+<style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h1, h2, h3 {
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards 0.5s;
+      transition: color 0.3s;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #00ffff;
+    }
+    p {
+      transition: transform 0.3s;
+    }
+    p:hover {
+      transform: scale(1.03);
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    </style></head>
+<body>
+  <h2>Bilangan Genap dari 1 Sampai 100</h2>
+  <script>
+    for (i = 2; i <= 100; i += 2) {
+      document.write(i + " | ");
+    }
+  </script>
+ <h2>Buat Perulangan Mundur dari bilangan terbesar ke kecil:</h2>
+    <p id="output"></p>
+
+    <script>
+        let text = "";
+        for (let i = 10; i > 1; i--) {
+            text += `Anak Ayam Turun ${i} mati 1 tinggal ${i - 1} <br>`;
+        }
+        text += "Anak Ayam Turun 1 mati 1 tinggal INDUKNYA";
+        document.getElementById("output").innerHTML = text;
+    </script>
+</body>
+</html>

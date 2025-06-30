@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulir Data Siswa</title>
+    <link rel="icon" type="image/png" href="logostruk.png">
+    <style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h1, h2, h3 {
+      transform: translateY(-15px);
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards 0.5s;
+      transition: color 0.3s;
+      font-size: 18px;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #00ffff;
+    }
+    p {
+      transition: transform 0.3s;
+    }
+    p:hover {
+      transform: scale(1.03);
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh; 
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;    
+      background-color: #f0f0f0; 
+      font-size: 13px;
+    }
+
+    .container {
+        width: 280px;
+        border: 1px solid #ccc;
+        padding: 12px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.15);
+        border-radius: 6px;
+        background: white;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .section-header {
+        color: white;
+        padding: 6px;
+        font-weight: bold;
+        font-size: 13px;
+        border-radius: 4px;
+        margin-top: 10px;
+    }
+
+    .green {
+        background-color: #4CAF50;
+    }
+
+    .orange {
+        background-color: orange;
+    }
+
+    .purple {
+        background-color: purple;
+    }
+
+    .form-group {
+        margin: 8px 0;
+    }
+
+    input[type="text"], select {
+        width: 100%;
+        padding: 6px;
+        margin-top: 3px;
+        box-sizing: border-box;
+        font-size: 13px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    label {
+        display: block;
+        margin: 4px 0;
+    }
+
+    .checkbox-group,
+    .radio-group {
+        margin-left: 10px;
+    }
+
+    .button-group {
+        margin-top: 12px;
+        text-align: center;
+    }
+
+    .button-group button {
+        background-color: orange;
+        color: white;
+        padding: 6px 12px;
+        margin: 3px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 13px;
+    }
+
+    .button-group button:hover {
+        opacity: 0.8;
+    }
+
+    .disabled {
+        color: gray;
+    }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3>FORMULIR DATA SISWA KELAS IT-1</h3>
+
+    <div class="section-header green">DATA SISWA</div>
+    <div class="form-group">
+        <label for="nim">NIM</label>
+        <input type="text" id="nim" name="nim">
+    </div>
+    <div class="form-group">
+        <label for="nama">NAMA LENGKAP</label>
+        <input type="text" id="nama" name="nama">
+    </div>
+
+    <div class="section-header orange">Hoby Anda</div>
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="hobi" checked> Games</label>
+        <label><input type="checkbox" name="hobi"> Musik</label>
+        <label><input type="checkbox" name="hobi"> Renang</label>
+        <label class="disabled"><input type="checkbox" name="hobi" disabled> Makan (Disabled)</label>
+    </div>
+
+    <div class="section-header purple">Jenis Kelamin Anda</div>
+    <div class="radio-group">
+        <label><input type="radio" name="jenis_kelamin" value="pria"> Pria</label>
+        <label><input type="radio" name="jenis_kelamin" value="wanita"> Wanita</label>
+        <label class="disabled"><input type="radio" name="jenis_kelamin" disabled> Tidak Tahu (Disabled)</label>
+    </div>
+
+    <div class="section-header green">Tempat Pavorit</div>
+    <div class="form-group">
+        <select>
+            <option>Pilih salah satu</option>
+            <option>Gunung</option>
+            <option>Pantai</option>
+            <option>Mall</option>
+        </select>
+    </div>
+
+    <div class="button-group">
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+    </div>
+</div>
+
+</body>
+</html>

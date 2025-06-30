@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio | Zulfa Angelita Huwaida</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="logostruk.png">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #0a192f;
+        color: #ccd6f6;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #112240;
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-container img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        border: 2px solid #61dafb;
+      }
+
+      .logo-container h1 {
+        color: #61dafb;
+        font-size: 26px;
+      }
+
+      nav a {
+        color: #8892b0;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #61dafb;
+      }
+
+      section {
+        padding: 50px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .intro {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .intro img {
+        width: 180px;
+        height: 180px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 3px solid #64ffda;
+      }
+
+      .bio {
+        flex: 1;
+      }
+
+      .bio h2 {
+        color: #64ffda;
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .bio p {
+        margin-bottom: 10px;
+        color: #8892b0;
+        font-size: 18px;
+      }
+
+      .about {
+        margin-top: 30px;
+      }
+
+      .about h2 {
+        color: #64ffda;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .skills {
+        background-color: #1a2b4c;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1);
+        margin-bottom: 50px;
+      }
+
+      .skills h2 {
+        font-size: 28px;
+        color: #64ffda;
+        margin-bottom: 20px;
+      }
+
+      .skills details {
+        background: #233554;
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        transition: background 0.3s;
+      }
+
+      .skills details:hover {
+        background: #2c3e60;
+      }
+
+      .skills summary {
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        color: #61dafb;
+      }
+
+      .skills p {
+        margin-top: 10px;
+        color: #8892b0;
+        font-size: 16px;
+      }
+
+      .projects .project {
+        background: #112240;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .projects .project h3 {
+        color: #61dafb;
+        margin-bottom: 10px;
+      }
+
+      .contact a {
+        color: #25d366;
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #112240;
+        color: #8892b0;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        .intro {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .bio {
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="logowp.jpeg" alt="Foto Profil" />
+        <h1>ZAH</h1>
+      </div>
+      <nav>
+        <a href="#skills">Keahlian</a>
+        <a href="#practical-projects">project</a>
+        <a href="#certifications">sertifikasi</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </header>
+
+    <section class="intro">
+      <img src="njel.jpeg" alt="Foto Profil" />
+      <div class="bio">
+        <h2>Zulfa Angelita Huwaida</h2>
+        <p><strong>NIM:</strong> 24EO10020</p>
+        <p><strong>Prodi:</strong> Informatika</p>
+        <hr />
+        <div class="about">
+          <h2>Tentang Saya</h2>
+          <p>
+            Saya adalah mahasiswa Informatika yang sedang aktif belajar dan
+            mengembangkan diri di bidang jaringan komputer, Linux server, serta
+            mulai mendalami pengembangan web (HTML, CSS, JavaScript) dan
+            database. Memiliki pengalaman dasar dalam instalasi dan konfigurasi
+            server Debian, layanan jaringan seperti VPN, Apache, EHCP, serta
+            monitoring menggunakan MRTG dan Cacti. Saat ini, saya siap belajar
+            hal baru dan berkembang di dunia IT.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="education" class="projects">
+      <h2>Pendidikan</h2>
+
+      <div class="project">
+        <h3>Universitas Nahdatul Ulama Al-Ghazali</h3>
+        <p>Program Studi Informatika, Semester 2 (2024 – Sekarang)</p>
+      </div>
+
+      <div class="project">
+        <h3>SMK Negeri 1 Binangun</h3>
+        <p>Jurusan Teknik Komputer dan Jaringan – Lulus 2024</p>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>Keahlian</h2>
+
+      <details>
+        <summary>Sistem Operasi & Virtualisasi</summary>
+        <p>
+          Instalasi dan konfigurasi Debian Linux 10, penggunaan VMware
+          Workstation, serta pengelolaan sistem berbasis terminal.
+        </p>
+      </details>
+
+      <details>
+        <summary>Jaringan Komputer</summary>
+        <p>
+          Konfigurasi LAN/WAN, pengalamatan IP, subnetting, dan troubleshooting
+          dasar jaringan.
+        </p>
+      </details>
+
+      <details>
+        <summary>Administrasi Server & Hosting</summary>
+        <p>
+          Konfigurasi Apache Web Server, EHCP, FTP server, serta pengelolaan
+          layanan hosting berbasis Linux.
+        </p>
+      </details>
+
+      <details>
+        <summary>Keamanan & Kontrol Jaringan</summary>
+        <p>
+          Pengaturan proxy server (Squid), firewall dasar, dan konfigurasi VPN
+          (OpenVPN/PPTP).
+        </p>
+      </details>
+
+      <details>
+        <summary>Monitoring Jaringan</summary>
+        <p>
+          Penggunaan MRTG dan Cacti untuk memantau performa jaringan dengan
+          protokol SNMP.
+        </p>
+      </details>
+
+      <details>
+        <summary>Pengembangan Web (Dasar)</summary>
+        <p>
+          HTML, CSS, JavaScript, serta dasar-dasar manajemen database
+          menggunakan MySQL.
+        </p>
+      </details>
+
+      <details>
+        <summary>Tools & Utilities</summary>
+        <p>
+          Penggunaan Winbox (MikroTik), PuTTY, dan FileZilla untuk administrasi
+          jaringan dan sistem.
+        </p>
+      </details>
+
+      <details>
+        <summary>VoIP & Tribox (Dasar)</summary>
+        <p>
+          Mempelajari penggunaan Tribox (berbasis Asterisk) untuk membangun
+          sistem komunikasi VoIP internal, termasuk konfigurasi dasar dan
+          manajemen ekstensi.
+        </p>
+      </details>
+    </section>
+
+    <section id="practical-projects" class="projects">
+      <h2>Proyek Praktik</h2>
+
+      <div class="project">
+        <h3>Instalasi Debian di VMware</h3>
+        <p>
+          Instalasi Debian Linux sebagai server virtual untuk jaringan lokal.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Web Hosting dengan Apache + EHCP</h3>
+        <p>
+          Menyediakan layanan web dan FTP di jaringan internal menggunakan
+          Apache dan EHCP.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Setup VPN dan Proxy Server</h3>
+        <p>
+          Konfigurasi VPN dan proxy server menggunakan Squid untuk simulasi
+          kontrol akses jaringan.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Monitoring Jaringan (MRTG & Cacti)</h3>
+        <p>
+          Implementasi monitoring bandwidth dan perangkat jaringan menggunakan
+          SNMP melalui MRTG dan Cacti.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Eksplorasi Sistem VoIP dengan Tribox</h3>
+        <p>
+          Mempelajari penggunaan Tribox (berbasis Asterisk) untuk membangun
+          sistem komunikasi internal berbasis VoIP.
+        </p>
+      </div>
+    </section>
+
+    <section id="certifications" class="projects">
+      <h2>Sertifikasi</h2>
+
+      <div class="project">
+        <h3>Introduction to Network</h3>
+        <p>Google / Bangkit Program – 2023</p>
+      </div>
+
+      <div class="project">
+        <h3>Pelatihan Basic Networking</h3>
+        <p>OMAData Learning Center – 2023</p>
+      </div>
+
+      <div class="project">
+        <h3>Pelatihan Mikrotik Dasar</h3>
+        <p>Telkom School – 2023</p>
+      </div>
+
+      <div class="project">
+        <h3>Sertifikat Uji Kompetensi Keamanan Jaringan WAN</h3>
+        <p>SMK Negeri 1 Binangun – 2024</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Kontak</h2>
+      <p><strong>Email:</strong> zulfaangelita6@gmail.com</p>
+      <p>
+        <strong>WhatsApp:</strong>
+        <a href="https://wa.me/6288225209283" target="_blank">0882-2520-9283</a>
+      </p>
+      <p>
+        <strong>LinkedIn:</strong>
+        <a
+          href="https://www.linkedin.com/in/zulfa-huwaida-1a28b9299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank"
+          >linkedin.com/in/zulfa</a
+        >
+      </p>
+    </section>
+
+    <footer>&copy; 2025 Angelita.</footer>
+  </body>
+</html>

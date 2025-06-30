@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  height: 100vh;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background: #0c0c1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile-img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.socials a {
+  margin: 0 5px;
+  color: white;
+  font-size: 16px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.nav-menu a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-menu a.active,
+.nav-menu a:hover {
+  color: #00aaff;
+}
+
+.nav-menu i {
+  margin-right: 10px;
+}
+
+footer {
+  font-size: 12px;
+  text-align: center;
+}
+
+footer a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.hero {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 24px;
+}

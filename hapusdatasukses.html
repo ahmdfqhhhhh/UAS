@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Telah Dihapus</title>
+    <link rel="icon" type="image/png" href="logostruk.png">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9fafb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .box {
+        background-color: #ffffff;
+        padding: 2rem 3rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .box h1 {
+        font-size: 1.8rem;
+        color: #22c55e;
+        margin-bottom: 1rem;
+      }
+
+      .box p {
+        font-size: 1rem;
+        color: #4b5563;
+        margin-bottom: 1.5rem;
+      }
+
+      .box a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: #3b82f6;
+        color: white;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
+
+      .box a:hover {
+        background-color: #2563eb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>✅ Data Berhasil Dihapus</h1>
+      <p>Data barang telah dihapus dari database.</p>
+      <a href="hapus_barang.php">Kembali ke halaman hapus</a>
+    </div>
+  </body>
+</html>

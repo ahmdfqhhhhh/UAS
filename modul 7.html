@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Penjualan Tiket & Barang</title>
+  <link rel="icon" type="image/png" href="logostruk.png">
+  <style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h1, h2, h3 {
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards 0.5s;
+      transition: color 0.3s;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #00ffff;
+    }
+    p {
+      transition: transform 0.3s;
+    }
+    p:hover {
+      transform: scale(1.03);
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    body {
+      font-family: Arial;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h3 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 5px;
+    }
+    button {
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>PROGRAM PENJUALAN TIKET</h3>
+    <div class="form-group">
+      <label>Kota Tujuan:</label><br>
+      <input type="radio" name="kota" value="Jakarta"> Jakarta<br>
+      <input type="radio" name="kota" value="Semarang"> Semarang<br>
+      <input type="radio" name="kota" value="Surabaya"> Surabaya
+    </div>
+
+    <div class="form-group">
+      <label>Jumlah Tiket:</label><br>
+      <input type="number" id="jumlahTiket">
+    </div>
+
+    <div class="form-group">
+      <label>Harga Tiket:</label><br>
+      <input type="text" id="hargaTiket" readonly>
+    </div>
+
+    <div class="form-group">
+      <label>Total Tiket:</label><br>
+      <input type="text" id="totalHargaTiket" readonly>
+    </div>
+
+    <button onclick="prosesTiket()">Proses Tiket</button>
+    <button onclick="resetTiket()">Reset Tiket</button>
+
+    <hr>
+
+    <h3>PROGRAM PENJUALAN BARANG</h3>
+    <div class="form-group">
+      <input type="checkbox" id="barang1" value="Handphone"> Handphone
+      <input type="number" id="jumlah1" placeholder="Jumlah"><br>
+
+      <input type="checkbox" id="barang2" value="Laptop"> Laptop
+      <input type="number" id="jumlah2" placeholder="Jumlah"><br>
+
+      <input type="checkbox" id="barang3" value="Komputer"> Komputer
+      <input type="number" id="jumlah3" placeholder="Jumlah">
+    </div>
+
+    <div class="form-group">
+      <label>Total Harga Barang:</label><br>
+      <input type="text" id="totalHargaBarang" readonly>
+    </div>
+
+    <button onclick="prosesBarang()">Proses Barang</button>
+    <button onclick="resetBarang()">Reset Barang</button>
+  </div>
+
+  <script>
+    function getHargaTiket(kota) {
+      switch (kota) {
+        case "Jakarta": return 100000;
+        case "Semarang": return 150000;
+        case "Surabaya": return 200000;
+        default: return 0;
+      }
+    }
+
+    function prosesTiket() {
+      const kota = document.querySelector('input[name="kota"]:checked');
+      const jumlah = parseInt(document.getElementById("jumlahTiket").value);
+      if (!kota || isNaN(jumlah)) {
+        alert("Pilih kota dan isi jumlah tiket.");
+        return;
+      }
+
+      const harga = getHargaTiket(kota.value);
+      const total = harga * jumlah;
+
+      document.getElementById("hargaTiket").value = harga.toLocaleString('id-ID');
+      document.getElementById("totalHargaTiket").value = total.toLocaleString('id-ID');
+    }
+
+    function resetTiket() {
+      document.getElementById("jumlahTiket").value = "";
+      document.getElementById("hargaTiket").value = "";
+      document.getElementById("totalHargaTiket").value = "";
+      document.querySelectorAll('input[name="kota"]').forEach(el => el.checked = false);
+    }
+
+    const hargaBarang = {
+      "Handphone": 1200000,
+      "Laptop": 5000000,
+      "Komputer": 3000000
+    };
+
+    function prosesBarang() {
+      let total = 0;
+
+      if (document.getElementById("barang1").checked) {
+        const jumlah = parseInt(document.getElementById("jumlah1").value) || 0;
+        total += hargaBarang["Handphone"] * jumlah;
+      }
+      if (document.getElementById("barang2").checked) {
+        const jumlah = parseInt(document.getElementById("jumlah2").value) || 0;
+        total += hargaBarang["Laptop"] * jumlah;
+      }
+      if (document.getElementById("barang3").checked) {
+        const jumlah = parseInt(document.getElementById("jumlah3").value) || 0;
+        total += hargaBarang["Komputer"] * jumlah;
+      }
+
+      document.getElementById("totalHargaBarang").value = total.toLocaleString('id-ID');
+    }
+
+    function resetBarang() {
+      ["barang1", "barang2", "barang3"].forEach(id => document.getElementById(id).checked = false);
+      ["jumlah1", "jumlah2", "jumlah3"].forEach(id => document.getElementById(id).value = "");
+      document.getElementById("totalHargaBarang").value = "";
+    }
+  </script>
+</body>
+</html>
